@@ -5,7 +5,7 @@ package ru.mamapapa.property;
  *
  * @author Popov Maxim <m_amapapa@mail.ru>
  */
-public interface Property<T extends Key> {
+public interface Property {
     void load() throws Exception;
 
     void load(String fileName) throws Exception;

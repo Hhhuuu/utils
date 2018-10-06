@@ -18,7 +18,7 @@ import static ru.mamapapa.utils.ReaderUtils.getReader;
  *
  * @author Popov Maxim <m_amapapa@mail.ru>
  */
-public class PropertyService<T extends Key> implements Property<T> {
+public class PropertyService implements Property {
     private static final Logger LOGGER = LoggerFactory.getLogger(PropertyService.class);
     private static final String FORMAT_MESSAGE = "Установлен параметр по умолчанию: {}, значение: {}";
     private static final String FAILED_TO_CONVERT_DATA = "Не удалось преобразовать данные";
@@ -142,9 +142,9 @@ public class PropertyService<T extends Key> implements Property<T> {
     }
 
     @SuppressWarnings("unchecked")
-    private <R> R convertData(Converter converter) {
+    private <T> T convertData(Converter converter) {
         try {
-            return (R) converter.convert();
+            return (T) converter.convert();
         } catch (Exception e) {
             throw new IllegalArgumentException(FAILED_TO_CONVERT_DATA);
         }
