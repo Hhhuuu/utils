@@ -12,19 +12,19 @@ public interface Property<T extends Key> {
 
     void load(String fileName, String folder) throws Exception;
 
-    String getString(T key);
+    String getString(Key key);
 
-    String getString(T key, String defaultValue);
+    String getString(Key key, String defaultValue);
 
-    Long getLong(T key);
+    Long getLong(Key key);
 
-    Long getLong(T key, Long defaultValue);
+    Long getLong(Key key, Long defaultValue);
 
-    Double getDouble(T key);
+    Double getDouble(Key key);
 
-    Double getDouble(T key, Double defaultValue);
+    Double getDouble(Key key, Double defaultValue);
 
-    Boolean getBoolean(T key);
+    Boolean getBoolean(Key key);
 
-    Boolean getBoolean(T key, boolean defaultValue);
+    Boolean getBoolean(Key key, boolean defaultValue);
 }

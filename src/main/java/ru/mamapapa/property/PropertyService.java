@@ -70,12 +70,12 @@ public class PropertyService<T extends Key> implements Property<T> {
     }
 
     @Override
-    public String getString(T key) {
+    public String getString(Key key) {
         return getProperty(key);
     }
 
     @Override
-    public String getString(T key, String defaultValue) {
+    public String getString(Key key, String defaultValue) {
         try {
             return getString(key);
         } catch (Exception ignore) {
@@ -85,13 +85,13 @@ public class PropertyService<T extends Key> implements Property<T> {
     }
 
     @Override
-    public Long getLong(T key) {
+    public Long getLong(Key key) {
         String property = getProperty(key);
         return convertData(() -> Long.valueOf(property));
     }
 
     @Override
-    public Long getLong(T key, Long defaultValue) {
+    public Long getLong(Key key, Long defaultValue) {
         try {
             return getLong(key);
         } catch (Exception ignore) {
@@ -102,13 +102,13 @@ public class PropertyService<T extends Key> implements Property<T> {
     }
 
     @Override
-    public Double getDouble(T key) {
+    public Double getDouble(Key key) {
         String property = getProperty(key);
         return convertData(() -> Double.valueOf(property));
     }
 
     @Override
-    public Double getDouble(T key, Double defaultValue) {
+    public Double getDouble(Key key, Double defaultValue) {
         try {
             return getDouble(key);
         } catch (Exception ignore) {
@@ -118,7 +118,7 @@ public class PropertyService<T extends Key> implements Property<T> {
     }
 
     @Override
-    public Boolean getBoolean(T key) {
+    public Boolean getBoolean(Key key) {
         String property = getProperty(key);
         return convertData(() -> {
             if ("true".compareToIgnoreCase(property) == 0) {
@@ -132,7 +132,7 @@ public class PropertyService<T extends Key> implements Property<T> {
     }
 
     @Override
-    public Boolean getBoolean(T key, boolean defaultValue) {
+    public Boolean getBoolean(Key key, boolean defaultValue) {
         try {
             return getBoolean(key);
         } catch (Exception ignore) {
@@ -150,7 +150,7 @@ public class PropertyService<T extends Key> implements Property<T> {
         }
     }
 
-    private String getProperty(T key) {
+    private String getProperty(Key key) {
         String keyValue = key.getValue();
         String value = properties.getProperty(keyValue);
         if (value == null) {
