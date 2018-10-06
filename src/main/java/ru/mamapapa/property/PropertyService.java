@@ -33,6 +33,7 @@ public class PropertyService<T extends Key> implements Property<T> {
      *
      * @throws Exception - возникает при неправильной загрузке файлов
      */
+    @Override
     public void load() throws Exception {
         load(DEFAULT_PROPERTY_FILE_NAME, CURRENT_FOLDER);
     }
@@ -44,6 +45,7 @@ public class PropertyService<T extends Key> implements Property<T> {
      * @param fileName - имя файла настроек
      * @throws Exception - возникает при неправильной загрузке файлов
      */
+    @Override
     public void load(String fileName) throws Exception {
         load(fileName, CURRENT_FOLDER);
     }
@@ -55,6 +57,7 @@ public class PropertyService<T extends Key> implements Property<T> {
      * @param folder   - директория с файлом настроек
      * @throws Exception - возникает при неправильной загрузке файлов
      */
+    @Override
     public void load(String fileName, String folder) throws Exception {
         LOGGER.info("Инициализация файла настроек");
         Input input = new FileInput(fileName).withPath(folder);

@@ -6,6 +6,12 @@ package ru.mamapapa.property;
  * @author Popov Maxim <m_amapapa@mail.ru>
  */
 public interface Property<T extends Key> {
+    void load() throws Exception;
+
+    void load(String fileName) throws Exception;
+
+    void load(String fileName, String folder) throws Exception;
+
     String getString(T key);
 
     String getString(T key, String defaultValue);
