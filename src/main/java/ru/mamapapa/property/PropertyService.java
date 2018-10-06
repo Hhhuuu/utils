@@ -156,7 +156,7 @@ public class PropertyService implements Property {
         if (value == null) {
             throw new IllegalArgumentException(String.format("Не найдена настройка по ключу '%s'", keyValue));
         }
-        LOGGER.debug("Получен параметр: {}, значение: {}", key, value);
+        LOGGER.debug("Получен параметр: {}, значение: {}", key, keyValue);
         return value;
     }
 }
