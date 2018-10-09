@@ -119,7 +119,7 @@ public class PropertyService implements Property {
 
     @Override
     public Boolean getBoolean(Key key) {
-        String property = getProperty(key);
+        String property = getProperty(key).trim();
         return convertData(() -> {
             if ("true".compareToIgnoreCase(property) == 0) {
                 return TRUE;
